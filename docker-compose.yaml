@@ -1,0 +1,15 @@
+services:
+  webdesktop:
+    build: .
+
+    container_name: webdesktop
+
+    restart: unless-stopped
+
+    ports:
+      - "8080:8080"
+
+    shm_size: "2gb"
+
+    environment:
+      - APPS=thunderbird keepassxc firefox-esr
